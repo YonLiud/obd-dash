@@ -27,13 +27,13 @@ void setup() {
   if(!ELM_PORT.connect("OBDII"))
   {
     DEBUG_PORT.println("Failed to connect to OBDII device - Phase 1");
-    return;
+    while (1);
   }
 
   if(!elm.begin(ELM_PORT, DEBUG_MODE, ELM_TIMEOUT_MS))
   {
     DEBUG_PORT.println("Failed to connect to OBDII device - Phase 2");
-    return;
+    while (1);
   }
 
   DEBUG_PORT.println("Connected to OBDII device");
